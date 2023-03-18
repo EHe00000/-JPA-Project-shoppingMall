@@ -2,6 +2,7 @@ package com.slacker.domainTest;
 
 import com.slacker.domain.Member;
 import com.slacker.member.repository.MemberRepository;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -24,15 +25,13 @@ public class memberTest {
     @Rollback(value = false)
     @Transactional
     public void Member_JPA_데이터_추가_메소드(){
-        Member member = new Member();
         Random rand = new Random();
 
         for(int i = 0; i<30; i++){
+            Member member = new Member();
             member.setMemberId("user" + i);
             member.setMember_pw("pass" + i);
             member.setMemberAge(rand.nextInt(30) + 20);
-
-            System.out.println(member.getMemberId() + " : " + member.getMemberAge());
 
             memberRepository.save(member);
         }
