@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상세 게시판 페이지</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/post.css">
+
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="logo">
+                <img src="./img/bookLogo.png" alt="로고" />
+            </div>
+            <div class="search">
+                <input type="text" placeholder="검색어를 입력하세요">
+                <button>
+                    <img src="./img/search-icon.png" alt="검색" />
+                </button>
+            </div>
+            <div class="member">
+                <a href="#">회원가입</a>
+                <a href="#">로그인</a>
+                <a href="#">장바구니</a>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">홈</a></li>
+                <li><a href="#">베스트셀러</a></li>
+                <li><a href="#">신간도서</a></li>
+                <li><a href="board.html">게시판</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="post-container">
+            <h2>샘플 게시글 1</h2>
+            <table class="post-info-table">
+                <tr>
+                    <th>작성자</th>
+                    <td>홍길동</td>
+                    <th>작성일</th>
+                    <td>2023-03-23</td>
+                    <th>조회수</th>
+                    <td>10</td>
+                </tr>
+            </table>
+            <hr>
+            <div class="post-content">
+                <p>여기에 게시글 내용이 들어갑니다.</p>
+            </div>
+            <div class="post-buttons">
+                <button class="post-button modify">수정</button>
+                <button class="post-button back">이전</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>도서 판매 홈페이지 &copy; 2023. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

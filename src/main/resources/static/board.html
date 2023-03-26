@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판 페이지</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/board.css">
+
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="logo">
+                <img src="./img/bookLogo.png" alt="로고" />
+            </div>
+            <div class="search">
+                <input type="text" placeholder="검색어를 입력하세요">
+                <button>
+                    <img src="./img/search-icon.png" alt="검색" />
+                </button>
+            </div>
+            <div class="member">
+                <a href="#">회원가입</a>
+                <a href="#">로그인</a>
+                <a href="#">장바구니</a>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">홈</a></li>
+                <li><a href="#">베스트셀러</a></li>
+                <li><a href="#">신간도서</a></li>
+                <li><a href="board.html">게시판</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="board-container">
+            <h2>게시판</h2>
+            <!-- 게시판 내용 표시 영역 -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>제목</th>
+                        <th>작성자</th>
+                        <th>작성일</th>
+                        <th>조회수</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><a href="post.html">샘플 게시글 1</a></td>
+                        <td>홍길동</td>
+                        <td>2023-03-23</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>샘플 게시글 2</td>
+                        <td>이순신</td>
+                        <td>2023-03-22</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>샘플 게시글 3</td>
+                        <td>김유신</td>
+                        <td>2023-03-21</td>
+                        <td
+                </tbody>
+            </table>
+            <div class="board-write">
+                <button id="write">글쓰기</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Copyright &copy; 2023 회사명. All rights reserved.</p>
+    </footer>
+</body>
+</html>
