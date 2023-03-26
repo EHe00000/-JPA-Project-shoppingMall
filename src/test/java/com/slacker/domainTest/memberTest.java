@@ -25,7 +25,11 @@ public class memberTest {
     @Rollback(value = false)
     @Transactional
     public void Member_JPA_데이터_추가_메소드(){
+
+        //given
         Random rand = new Random();
+
+        //when
 
         for(int i = 0; i<30; i++){
             Member member = new Member();
