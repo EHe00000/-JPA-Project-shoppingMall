@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>도서 판매 홈페이지</title>
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
     <header>
         <div class="top-bar">
             <div class="logo">
-                <img src="./img/bookLogo.png" alt="로고" />
+                <img src="/img/booklogo.png" alt="로고" />
             </div>
             <div class="search">
                 <input type="text" placeholder="검색어를 입력하세요">
                 <button>
-                    <img src="./img/search-icon.png" alt="검색" />
+                    <img src="/img/search-icon.png" alt="검색" />
                 </button>
             </div>
             <div class="member">
@@ -29,7 +29,8 @@
                 <li><a href="#">홈</a></li>
                 <li><a href="#">베스트셀러</a></li>
                 <li><a href="#">신간도서</a></li>
-                <li><a href="board.html">게시판</a></li>
+                <li><a href="/book/insert">책 추가</a> </li>
+                <li><a href="/board.html">게시판</a></li>
             </ul>
         </nav>
     </header>
@@ -63,25 +64,10 @@
         <section class="book-list">
             <h1>신간도서</h1>
             <div class="new-book">
-                <div class="book">
-                    <img src='book1.jpg' alt='책 제목1'>
-                    <h2 class="book-title">책 제목1</h2>
-                    <p class="book-author">저자1</p>
-                    <p class="book-price">12,000원</p>
-                </div>
-
-                <div class="book">
-                    <img src='book2.jpg' alt='책 제목2'>
-                    <h2 class="book-title">책 제목2</h2>
-                    <p class="book-author">저자2</p>
-                    <p class="book-price">15,000원</p>
-                </div>
-
-                <div class="book">
-                    <img src='book3.jpg' alt='책 제목3'>
-                    <h2 class="book-title">책 제목3</h2>
-                    <p class="book-author">저자3</p>
-                    <p class="book-price">18,000원</p>
+                <div class="book" th:each="book : ${bookList}">
+                    <h2 class="book-title" th:text="${book.getName()}"></h2>
+                   <!-- <p class="book-author">저자1</p> -->
+                    <p class="book-price" th:text="${book.getPrice()} + 원"></p>
                 </div>
             </div>
         </section>
