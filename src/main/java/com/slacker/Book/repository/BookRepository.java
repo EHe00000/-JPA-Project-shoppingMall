@@ -1,4 +1,4 @@
-package com.slacker.member.repository;
+package com.slacker.Book.repository;
 
 import com.slacker.domain.Book;
 import org.springframework.stereotype.Repository;

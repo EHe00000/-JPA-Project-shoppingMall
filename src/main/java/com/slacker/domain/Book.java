@@ -30,4 +30,7 @@ public class Book
     @Column(name = "ISBN")
     private String isbn;
 
+    @Column(name = "BOOK_STATUS")
+    private String bookStatus;
+
 }

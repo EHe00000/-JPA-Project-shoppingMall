@@ -1,12 +1,11 @@
 package com.slacker.Book.service;
 
 import com.slacker.domain.Book;
-import com.slacker.member.repository.BookRepository;
+import com.slacker.Book.repository.BookRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -27,9 +26,9 @@ public class BookSerivce
         String[] isbm = {"9791161571188","9791169791977","9791191891287"};
 
         List<Book> books = new ArrayList<>();
-        Book book1 = new Book(null,name[0],price[0],10,isbm[0]);
-        Book book2 = new Book(null,name[1],price[1],10,isbm[1]);
-        Book book3 = new Book(null,name[2],price[2],10,isbm[2]);
+        Book book1 = new Book(null,name[0],price[0],10,isbm[0],"NEW");
+        Book book2 = new Book(null,name[1],price[1],10,isbm[1],"NEW");
+        Book book3 = new Book(null,name[2],price[2],10,isbm[2],"NEW");
         books.add(book1);
         books.add(book2);
         books.add(book3);

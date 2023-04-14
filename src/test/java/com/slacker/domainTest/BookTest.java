@@ -1,16 +1,12 @@
 package com.slacker.domainTest;
 
-import com.slacker.domain.Book;
-import com.slacker.member.repository.BookRepository;
-import org.aspectj.lang.annotation.Before;
+import com.slacker.Book.repository.BookRepository;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
-import java.util.Arrays;
-import java.util.List;
 
 @SpringBootTest
 public class BookTest
