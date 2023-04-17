@@ -1,5 +1,6 @@
 package com.slacker.main.repository;
 
+import com.slacker.Book.dto.BookDTO;
 import com.slacker.domain.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -14,9 +15,26 @@ public class MainReopository
     private EntityManager em;
 
     @Transactional
-    public void modify(Long bookCode)
+    public void modify(BookDTO book)
     {
-       Book book = em.find(Book.class,bookCode);
-       book.setBookStatus("BEST");
+       Book modifyBook = em.find(Book.class,book.getId());
+       if(!book.getName().isEmpty())
+           modifyBook.setName(book.getName());
+       if(book.getPrice() != modifyBook.getPrice() && book.getPrice() != 0)
+           modifyBook.setPrice(book.getPrice());
+       if(book.getBookStatus() != modifyBook.getBookStatus())
+           modifyBook.setBookStatus(book.getBookStatus());
+
+    }
+    @Transactional
+    public void delete(Long id)
+    {
+        em.remove(em.find(Book.class,id));
+    }
+
+    @Transactional
+    public void regist(Book book)
+    {
+        em.persist(book);
     }
 }

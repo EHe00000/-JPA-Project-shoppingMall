@@ -1,11 +1,13 @@
 package com.slacker.main;
 
+import com.slacker.Book.dto.BookDTO;
 import com.slacker.Book.service.BookSerivce;
 import com.slacker.domain.Book;
 import com.slacker.main.service.MainService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -32,13 +34,33 @@ public class MainController
         return "index";
     }
 
-    @GetMapping("/main/modify")
-    public String modifyPage(){ return "main/modify"; }
+    @GetMapping("/main/book/regist")
+    public String registBook() { return "main/book/regist"; }
+
+    @PostMapping("/main/regist")
+    public String regist(@ModelAttribute BookDTO book)
+    {
+        mainService.regist(book);
+        return "redirect:/";
+    }
+
+    @GetMapping("/main/book/modify")
+    public String modifyPage(){ return "main/book/modify"; }
 
     @PostMapping("main/modify")
-    public String modify(@RequestParam Long bookCode)
+    public String modify(@ModelAttribute BookDTO book)
     {
-        mainService.modify(bookCode);
+        mainService.modify(book);
+        return "redirect:/";
+    }
+
+    @GetMapping("/main/book/delete")
+    public String deletePage() { return "main/book/delete"; }
+
+    @PostMapping("/main/delete")
+    public String delete(@RequestParam Long id)
+    {
+        mainService.delete(id);
         return "redirect:/";
     }
 

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>modify</title>
+</head>
+<body>
+    <h2 align="center">책수정</h2>
+    <form action="/main/modify" method="post">
+      <label>수정할 책 코드 : </label>
+      <input type="number" name="id"><br>
+      <label>수정할 이름 : </label><input type="text" name="name"><br>
+      <label>수정할 가격 : </label><input type="text" name="price"><br>
+      <label>책 상태 여부 : </label>
+        <select name="bookStatus">
+            <option value="NEW">신상품</option>
+            <option value="BEST">Best</option>
+            <option value="NO">판매 중지</option>
+        </select>
+      <input type="submit" value="수정">
+    </form>
+
+</body>
+</html>

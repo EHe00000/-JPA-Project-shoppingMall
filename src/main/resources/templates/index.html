@@ -29,8 +29,9 @@
                 <li><a href="#">홈</a></li>
                 <li><a href="#">베스트셀러</a></li>
                 <li><a href="#">신간도서</a></li>
-                <li><a href="/book/insert">책 추가</a> </li>
-                <li><a href="/main/modify">책 수정</a></li>
+                <li><a href="/main/book/regist">책 추가</a> </li>
+                <li><a href="/main/book/modify">책 수정</a></li>
+                <li><a href="/main/book/delete">책 삭제</a></li>
                 <li><a href="/board.html">게시판</a></li>
             </ul>
         </nav>
@@ -39,11 +40,10 @@
         <section class="book-list">
             <h1>베스트셀러</h1>
             <div class="best-seller-book">
-                <div class="book">
-                    <img src='book1.jpg' alt='책 제목1'>
-                    <h2 class="book-title">책 제목1</h2>
-                    <p class="book-author">저자1</p>
-                    <p class="book-price">12,000원</p>
+                <div class="book" th:each="book : ${bookList}" th:if="${book.getBookStatus()} == 'BEST'">
+                    <h2 class="book-title" th:text="${book.getName()}"></h2>
+                    <!-- <p class="book-author">저자1</p> -->
+                    <p class="book-price" th:text="${book.getPrice()} + 원"></p>
                 </div>
             </div>
         </section>
@@ -51,7 +51,7 @@
         <section class="book-list">
             <h1>신간도서</h1>
             <div class="new-book">
-                <div class="book" th:each="book : ${bookList}">
+                <div class="book" th:each="book : ${bookList}" th:if="${book.getBookStatus()} == 'NEW'">
                     <h2 class="book-title" th:text="${book.getName()}"></h2>
                    <!-- <p class="book-author">저자1</p> -->
                     <p class="book-price" th:text="${book.getPrice()} + 원"></p>

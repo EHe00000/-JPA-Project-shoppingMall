@@ -18,10 +18,4 @@ public class BookController
         this.bookSerivce = bookSerivce;
     }
 
-    @GetMapping("insert")
-    public String firstBookRegist()
-    {
-        bookSerivce.firstBookRegist();
-        return "redirect:/";
-    }
 }

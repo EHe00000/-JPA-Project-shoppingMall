@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>regist</title>
+</head>
+<body>
+    <h1 align="center">책 추가</h1>
+    <form action="/main/regist" method="post">
+        <label>추가할 책의 이름 : </label><input type="text" name="name"><br>
+        <label>추가할 책의 가격 : </label><input type="number" name="price"><br>
+        <label>추가할 책의 수량 : </label><input type="number" name="quantity"><br>
+        <label>추가할 책의 isbn : </label><input type="text" name="isbn"><br>
+        <label>추가할 책의 상태 : </label>
+        <select name="bookStatus">
+            <option value="NEW">신상품</option>
+            <option value="BEST">Best</option>
+            <option value="NO">판매 중지</option>
+        </select>
+        <input type="submit" name="전송">
+    </form>
+
+</body>
+</html>
