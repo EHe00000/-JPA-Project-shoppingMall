@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로그인 페이지</title>
-    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
     <header>
         <div class="top-bar">
             <div class="logo">
-                <img src="./img/bookLogo.png" alt="로고" />
+                <img src="/img/bookLogo.png" alt="로고" />
             </div>
             <div class="search">
                 <input type="text" placeholder="검색어를 입력하세요">
                 <button>
-                    <img src="./img/search-icon.png" alt="검색" />
+                    <img src="/img/search-icon.png" alt="검색" />
                 </button>
             </div>
             <div class="member">
                 <a href="#">회원가입</a>
                 <a href="#">로그인</a>
                 <a href="#">장바구니</a>
-                <li><a href="board.html">게시판</a></li>
+                <li><a href="/board.html">게시판</a></li>
             </div>
         </div>
         <nav>
@@ -37,7 +37,7 @@
     <main>
         <div class="login-container">
             <h2>로그인</h2>
-            <form>
+            <form action="/member/user-login">
                 <div class="form-group">
                     <label for="login-username">아이디</label>
                     <input type="text" id="login-username" name="username" required>
