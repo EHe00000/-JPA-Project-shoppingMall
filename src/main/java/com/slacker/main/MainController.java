@@ -28,7 +28,7 @@ public class MainController
     @GetMapping("/")
     public String mainPage(Model model)
     {
-        List<Book> bookList = bookSerivce.findNewBook();
+        List<BookDTO> bookList = bookSerivce.findNewBook();
         model.addAttribute("bookList", bookList);
 
         return "index";

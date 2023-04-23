@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bookPage</title>
+  <link rel="stylesheet" type="text/css" href="/css/book/bookPage.css">
+</head>
+<body>
+<div class="categoryTypeSale">
+  <h2 th:text="${bookList.get(0).getBookStatus()}"></h2>
+  <div class="SaleList">
+    <div class="product-item" th:each="book : ${bookList}">
+   <!--   <a th:onclick="|location.href='/sale/bookDetails?no=${book.BookCode}'|">
+        <th:block calss ="imgbox" th:each="title : ${fileList}">
+          <img class="saleImg"
+               th:if="${title.fileType} == 'TITLE' and ${book.BookCode == title.BookCode}"
+               th:src="${title.fileMainPath}" />
+        </th:block> -->
+        <p>
+          No.<label th:text="${ book.getId() }"></label>
+          <span th:text="${book.getName()}"></span><br>
+          <span th:text="${book.getPrice()} + 원"></span>
+        </p>
+        </div>
+     <!-- </a>  이미지 감싸는 a 태그임-->
+    </div>
+  </div>
+</body>
+</html>

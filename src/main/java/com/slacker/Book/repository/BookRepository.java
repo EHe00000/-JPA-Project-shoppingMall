@@ -1,6 +1,7 @@
 package com.slacker.Book.repository;
 
 import com.slacker.domain.Book;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -9,6 +10,7 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Repository
+@Slf4j
 public class BookRepository
 {
     @PersistenceContext
@@ -31,5 +33,14 @@ public class BookRepository
     {
         String jpql = "SELECT b FROM Book b ORDER BY b.id ASC";
         return em.createQuery(jpql,Book.class).getResultList();
+    }
+
+    public List<Book> findCategory(String bookStatus)
+    {
+        log.info("bookStatus : " + bookStatus);
+        String jpql = "SELECT b FROM Book b WHERE b.bookStatus = :bookStatus ORDER BY  b.id ASC";
+        return em.createQuery(jpql,Book.class)
+                .setParameter()
+                .getResultList();
     }
 }

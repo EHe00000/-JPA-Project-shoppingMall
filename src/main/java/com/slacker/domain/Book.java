@@ -14,23 +14,23 @@ import javax.persistence.*;
 @Getter @Setter
 public class Book
 {
-    @Id @Column(name = "BOOK_ID")
+    @Id @Column(name = "book_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "BOOK_NAME")
+    @Column(name = "book_name")
     private String name;
 
-    @Column(name = "BOOK_PRICE")
+    @Column(name = "book_price")
     private int price;
 
-    @Column(name = "QUANTITY")
+    @Column(name = "quantity")
     private int quantity;
 
-    @Column(name = "ISBN")
+    @Column(name = "isbn")
     private String isbn;
 
-    @Column(name = "BOOK_STATUS")
+    @Column(name = "book_status")
     private String bookStatus;
 
 }
